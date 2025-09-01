@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Static Product List</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #divID {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            mix-blend-mode: hue; 
+            opacity: 0.5; 
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .sale-badge {
+            display: inline-block;
+            padding: 0.25em 0.6em;
+            font-size: 75%;
+            font-weight: 700;
+            color: #fff;
+            background-color: #dc3545;
+            margin-left: 8px;
+        }
+
+        /* .row-odd {
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .row-even {
+            background-color: #333;
+            color: #ddd;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="divID">
+        <h1>Products</h1>
+
+    <table >
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>
+                    {{ product.name }}
+                    {% if product.price < 20 %} <span class="sale-badge">Sale</span>
+                        {% endif %}
+                </td>
+                <td>{{ product.category }}</td>
+                <td>${{ product.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    
+
+</body>
+<script>
+
+    const divElem = document.getElementById("divID");
+
+    function randomcolor() {
+        return Math.floor(Math.random() * 256); 
+    }
+
+    divElem.addEventListener('click', () => {
+        divElem.style.backgroundColor = `rgb(${randomcolor()}, ${randomcolor()}, ${randomcolor()})`;
+    });
+</script>
+
+</html>

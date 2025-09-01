@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Details</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: antiquewhite;
+            margin: 0;
+            padding: 0;
+            color: #333;
+
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 0 20;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px 0;
+            padding: 1rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Hello, {{ user_name }}!</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <p>You are {{ user_age }} years old.</p>
+            <p>Your favorite color is {{ user_color }}.</p>
+        </div>
+    </main>
+
+
+</body>
+
+</html>
