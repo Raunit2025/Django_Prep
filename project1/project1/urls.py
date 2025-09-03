@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('firstApp/', include("firstApp.urls")),
     path('todoApp/', include("ToDo.urls")),
-    path('fruit_list/', include("fruit_list.urls"))
+    path('fruit_list/', include("fruit_list.urls")),
 ]
+handler404 = 'project1.views.handler404'
